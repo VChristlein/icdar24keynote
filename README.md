@@ -17,8 +17,7 @@ volume = {63},
 pages = {258-267},
 year = {2017},
 issn = {0031-3203},
-doi = {https://doi.org/10.1016/j.patcog.2016.10.005},
-url = {https://www.sciencedirect.com/science/article/pii/S0031320316303211},
+doi = {10.1016/j.patcog.2016.10.005},
 author = {Vincent Christlein and David Bernecker and Florian Hönig and Andreas Maier and Elli Angelopoulou},
 }
 ```
