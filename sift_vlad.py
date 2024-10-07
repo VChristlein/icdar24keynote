@@ -555,9 +555,9 @@ if __name__ == '__main__':
         print('run ', i)
         enc_test = runF('encs_test_vlad_{}.pkl.gz'.format(i), args.overwrite,
                         args.tmp_folder,
-                    vlad, files_test, all_mus[i], args.powernorm, args.gmp, args.gamma,
-                    ipcas[i] if args.ipca_comps >= 0 else None),
-                    rm_duplicates=args.rm_duplicates)
+                        vlad, files_test, all_mus[i], args.powernorm, args.gmp, args.gamma,
+                        ipcas[i] if args.ipca_comps >= 0 else None,
+                        rm_duplicates=args.rm_duplicates)
         evaluate(enc_test, labels_test)
 
         if args.iesvm or args.esvm or args.pca_comps >= 0 or args.standardize:
@@ -568,7 +568,7 @@ if __name__ == '__main__':
                              vlad, files_train, mus, args.powernorm, args.gmp, 
                              args.gamma,
                              ipcas[i] if args.ipca_comps >= 0 else None,
-                             rm_duplicates=args.rm_duplicates,
+                             rm_duplicates=args.rm_duplicates)
 
             all_enc_train.append(enc_train)
 
