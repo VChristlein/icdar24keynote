@@ -11,7 +11,7 @@ import numpy.ma as ma
 
 import cv2
 from sklearn.decomposition import PCA
-from parmap import parmap
+#from parmap import parmap
 from sklearn.linear_model import Ridge
 from sklearn.svm import LinearSVC
 
@@ -458,7 +458,7 @@ def runF(fname, overwrite, out_folder, func, *args, **kwargs):
     path = os.path.join(out_folder, fname)
     if not os.path.exists(path) or overwrite:
         ret = func(*args, **kwargs)
-        dump(out_path, ret)
+        dump(path, ret)
     else:
         ret = load(path)
 
@@ -497,9 +497,8 @@ def esvm(encs_test, encs_train, C=1000, same=False):
         x = normalize(esvm.coef_, norm='l2')
         return x
 
-    new_encs = list(parmap( loop, tqdm(range(len(encs_test)))))
-#                           show_progress=True))
-#    new_encs = list(map(loop, tqdm(range(len(encs_test)))))
+#    new_encs = list(parmap( loop, tqdm(range(len(encs_test)))))
+    new_encs = list(map(loop, tqdm(range(len(encs_test)))))
     new_encs = np.concatenate(new_encs, axis=0)
     # return new encodings
     return new_encs
