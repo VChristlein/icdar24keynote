@@ -3,6 +3,8 @@
 
 slides and code of my icdar24 keynote
 
+**Attention: the re-rank results might be flawed since neighboring documents are likely having the same label. For a fair assessment, the documents should have been shuffled**
+
 how to run the code:
 ```
 python sift_vlad.py --labels_test <path_to>/icdar17_labels_test.txt --labels_train <path_to>icdar17_labels_train.txt -str .png -ste .jpg --to_binary --in_test <path_to>icdar17/test/binarized --in_train <path_to>icdar17/train/binarized --powernorm --rm_duplicates --tmp_folder sift_rm_dup --esvm
